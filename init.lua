@@ -887,6 +887,7 @@ require('lazy').setup({
     config = function()
       ---@diagnostic disable-next-line: missing-fields
       require('catppuccin').setup {
+        transparent_background = true,
         styles = {},
       }
 
