@@ -105,11 +105,6 @@ return {
     opts = {},
   },
   {
-    'MeanderingProgrammer/render-markdown.nvim',
-    ft = { 'markdown', 'codecompanion' },
-    opts = { enabled = true, preset = 'lazy' },
-  },
-  {
     'echasnovski/mini.diff',
     config = function()
       local diff = require 'mini.diff'
