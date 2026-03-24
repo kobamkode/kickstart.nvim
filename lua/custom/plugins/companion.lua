@@ -27,26 +27,15 @@ return {
       },
       rules = {
         default = {
-          description = 'Collection of common files for all projects',
           files = {
-            '.clinerules',
-            '.cursorrules',
-            '.goosehints',
-            '.rules',
-            '.windsurfrules',
-            '.github/copilot-instructions.md',
-            'AGENT.md',
             'AGENTS.md',
-            { path = 'CLAUDE.md', parser = 'claude' },
-            { path = 'CLAUDE.local.md', parser = 'claude' },
-            { path = '~/.claude/CLAUDE.md', parser = 'claude' },
           },
           is_preset = true,
         },
         opts = {
           chat = {
             enabled = true,
-            default_rules = 'default', -- The rule groups to load
+            default_rules = 'default',
             autoload = { 'default' },
           },
         },
@@ -58,14 +47,5 @@ return {
         },
       },
     },
-  },
-  {
-    'echasnovski/mini.diff',
-    config = function()
-      local diff = require 'mini.diff'
-      diff.setup {
-        source = diff.gen_source.none(),
-      }
-    end,
   },
 }
