@@ -4,7 +4,6 @@ return {
     dependencies = {
       'nvim-lua/plenary.nvim',
       'nvim-treesitter/nvim-treesitter',
-      'ravitemer/mcphub.nvim',
       'ravitemer/codecompanion-history.nvim',
     },
     opts = {
@@ -19,9 +18,7 @@ return {
       adapters = {
         http = {
           env = {
-            api_key = function()
-              return os.getenv 'ANTHROPIC_API_KEY'
-            end,
+            api_key = function() return os.getenv 'ANTHROPIC_API_KEY' end,
           },
         },
       },

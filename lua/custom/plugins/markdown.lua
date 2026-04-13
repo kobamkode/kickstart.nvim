@@ -1,7 +1,7 @@
 return {
   {
     'MeanderingProgrammer/render-markdown.nvim',
-    ft = { 'markdown', 'codecompanion' },
+    ft = { 'codecompanion' },
     opts = {
       completions = { lsp = { enabled = true } },
       preset = 'lazy',
