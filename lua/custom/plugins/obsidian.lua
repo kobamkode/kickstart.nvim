@@ -22,6 +22,31 @@ return {
       folder = 'templates',
       date_format = 'YYYY-MM-DD',
       time_format = 'HH:mm',
+      substitutions = {
+        prev_daily = function()
+          local today = os.date '%Y-%m-%d'
+          local files = vim.fn.glob(vim.fn.expand '~/dev/notes/journal/' .. '**/*.md', false, true)
+          local dates = {}
+          for _, f in ipairs(files) do
+            local date = f:match '(%d%d%d%d%-%d%d%-%d%d)%.md$'
+            if date and date < today then table.insert(dates, date) end
+          end
+          table.sort(dates)
+          return dates[#dates] or os.date('%Y-%m-%d', os.time() - 86400)
+        end,
+
+        next_daily = function()
+          local today = os.date '%Y-%m-%d'
+          local files = vim.fn.glob(vim.fn.expand '~/dev/notes/journal/' .. '**/*.md', false, true)
+          local dates = {}
+          for _, f in ipairs(files) do
+            local date = f:match '(%d%d%d%d%-%d%d%-%d%d)%.md$'
+            if date and date > today then table.insert(dates, date) end
+          end
+          table.sort(dates)
+          return dates[1] or os.date('%Y-%m-%d', os.time() + 86400)
+        end,
+      },
     },
     open_notes_in = 'current',
     callbacks = {
