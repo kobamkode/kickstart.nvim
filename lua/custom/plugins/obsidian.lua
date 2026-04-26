@@ -10,6 +10,10 @@ return {
         name = 'personal',
         path = '~/dev/notes',
       },
+      {
+        name = 'devlog',
+        path = '~/dev/devlog',
+      },
     },
     daily_notes = {
       enabled = true,
